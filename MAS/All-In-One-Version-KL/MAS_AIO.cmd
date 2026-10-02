@@ -12713,16 +12713,17 @@ set _server=
 echo:
 echo Enter / Paste the %KS% Server address, or just press Enter to return:
 echo:
-set /p _server=
+set /p "_server="
 if not defined _server goto :ks_menu
 set "_server=%_server: =%"
 
 echo:
 echo Enter / Paste the %KS% Port address, or just press Enter to use default:
 echo:
-set /p _port=
-if not defined _port goto :ks_menu
+set "_port="
+set /p "_port="
 set "_port=%_port: =%"
+if not defined _port set "_port=1688"
 
 goto :ks_menu
 
